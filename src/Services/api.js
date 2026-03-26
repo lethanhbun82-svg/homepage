@@ -3,7 +3,7 @@ import axios from 'axios';
 // --- CẤU HÌNH ---
 const CLOUDINARY_NAME = "dnqertlqe";
 const CLOUDINARY_PRESET = "tws_preset";
-const MENDIX_BASE_URL = "http://localhost:5000/api";
+const MENDIX_BASE_URL = "https://backend-ca5y.vercel.app/api";
 
 // --- AXIOS INSTANCE ---
 const mendixApi = axios.create({

@@ -239,7 +239,7 @@ const ProjectModal = ({ isOpen, onClose, project, onRefresh }) => {
               <div className="quill-wrapper rounded-[2rem] border-2 border-slate-100 overflow-hidden bg-white shadow-inner">
                 {isDataLoaded ? (
                   <ReactQuill
-                    key={project?.id ? `edit-${project.id}` : 'new-project'}
+                    key={project?._id ? `edit-${project._id}` : 'new-project'}
                     theme="snow"
                     value={formData.content}
                     onChange={handleEditorChange}
