@@ -33,101 +33,125 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-50 px-6 font-sans">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-slate-50 px-4 sm:px-6 font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl shadow-slate-200/50 border border-slate-100">
+        
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 bg-white p-6 sm:p-10 lg:p-16 rounded-2xl lg:rounded-[3rem] shadow-xl shadow-slate-200/50 border border-slate-100">
           
-          {/* Thông tin liên hệ bên trái */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-                <h2 className="text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
-                    Liên hệ với <br/><span className="text-blue-600">Chúng tôi</span>
-                </h2>
-                <div className="h-1.5 w-20 bg-blue-600 rounded-full"></div>
+          {/* LEFT */}
+          <div className="space-y-6 sm:space-y-8">
+            
+            <div className="space-y-3 sm:space-y-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-900 leading-tight">
+                Liên hệ với <br/>
+                <span className="text-blue-600">Chúng tôi</span>
+              </h2>
+              <div className="h-1 w-16 sm:w-20 bg-blue-600 rounded-full"></div>
             </div>
             
-            <p className="text-slate-600 text-lg leading-relaxed">
-                Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng lắng nghe và tư vấn giải pháp tối ưu nhất cho bài toán chuyển đổi số của doanh nghiệp bạn.
+            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+              Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng lắng nghe và tư vấn giải pháp tối ưu nhất cho bài toán chuyển đổi số của doanh nghiệp bạn.
             </p>
             
-            <div className="space-y-6 pt-6">
-              <div className="flex items-center gap-5 text-slate-700 font-semibold group">
-                <div className="p-4 bg-blue-50 rounded-2xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
-                    <Phone size={24} />
+            <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
+              
+              {/* PHONE */}
+              <div className="flex items-start gap-4 text-slate-700 font-semibold group">
+                <div className="p-3 sm:p-4 bg-blue-50 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm shrink-0">
+                  <Phone size={20} />
                 </div>
                 <div>
-                    <p className="text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">Hotline tư vấn</p>
-                    <span className="text-lg">(+84) 28 3554 2545</span>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">
+                    Hotline tư vấn
+                  </p>
+                  <span className="text-base sm:text-lg break-all">
+                    (+84) 28 3554 2545
+                  </span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5 text-slate-700 font-semibold group">
-                <div className="p-4 bg-blue-50 rounded-2xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
-                    <Mail size={24} />
+              {/* EMAIL */}
+              <div className="flex items-start gap-4 text-slate-700 font-semibold group">
+                <div className="p-3 sm:p-4 bg-blue-50 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm shrink-0">
+                  <Mail size={20} />
                 </div>
                 <div>
-                    <p className="text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">Email phòng kinh doanh</p>
-                    <span className="text-lg">bdm@techsolutions.vn</span>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">
+                    Email phòng kinh doanh
+                  </p>
+                  <span className="text-base sm:text-lg break-all">
+                    bdm@techsolutions.vn
+                  </span>
                 </div>
               </div>
+
             </div>
           </div>
 
-          {/* Form liên hệ bên phải */}
+          {/* RIGHT */}
           {!success ? (
-            <form onSubmit={handleSubmit} className="space-y-5 bg-slate-50 p-8 md:p-10 rounded-[2rem] border border-slate-100 shadow-inner">
-              <div className="grid md:grid-cols-1 gap-5">
-                  <input 
-                    required name="name" value={formData.name} onChange={handleChange}
-                    type="text" placeholder="Họ và tên khách hàng *" 
-                    className="w-full bg-white border border-slate-200 rounded-xl px-6 py-4 text-slate-900 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all shadow-sm" 
-                  />
-                  <input 
-                    required name="email" value={formData.email} onChange={handleChange}
-                    type="email" placeholder="Địa chỉ Email *" 
-                    className="w-full bg-white border border-slate-200 rounded-xl px-6 py-4 text-slate-900 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all shadow-sm" 
-                  />
-                  <input 
-                    required name="phone" value={formData.phone} onChange={handleChange}
-                    type="tel" placeholder="Số điện thoại liên lạc *" 
-                    className="w-full bg-white border border-slate-200 rounded-xl px-6 py-4 text-slate-900 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all shadow-sm" 
-                  />
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 bg-slate-50 p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-100 shadow-inner">
+              
+              <div className="space-y-4">
+                <input 
+                  required name="name" value={formData.name} onChange={handleChange}
+                  type="text" placeholder="Họ và tên khách hàng *" 
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-slate-900 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all shadow-sm" 
+                />
+                
+                <input 
+                  required name="email" value={formData.email} onChange={handleChange}
+                  type="email" placeholder="Địa chỉ Email *" 
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-slate-900 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all shadow-sm" 
+                />
+                
+                <input 
+                  required name="phone" value={formData.phone} onChange={handleChange}
+                  type="tel" placeholder="Số điện thoại liên lạc *" 
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-slate-900 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all shadow-sm" 
+                />
               </div>
               
               <textarea 
                 required name="message" value={formData.message} onChange={handleChange}
                 placeholder="Yêu cầu cụ thể của doanh nghiệp..." 
-                className="w-full bg-white border border-slate-200 rounded-xl px-6 py-4 text-slate-900 h-36 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all shadow-sm resize-none"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-slate-900 h-28 sm:h-36 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all shadow-sm resize-none"
               ></textarea>
               
               <button 
                 disabled={loading}
-                className="w-full bg-blue-600 hover:bg-slate-900 text-white py-5 rounded-xl font-bold uppercase tracking-widest transition-all shadow-lg shadow-blue-200 flex items-center justify-center gap-3 disabled:bg-slate-300"
+                className="w-full bg-blue-600 hover:bg-slate-900 text-white py-4 sm:py-5 rounded-xl text-sm sm:text-base font-bold uppercase tracking-wider transition-all shadow-lg shadow-blue-200 flex items-center justify-center gap-2 sm:gap-3 disabled:bg-slate-300"
               >
                 {loading ? <Loader2 className="animate-spin" /> : <Send size={18} />}
-                Gửi yêu cầu tư vấn
+                Gửi yêu cầu
               </button>
-              <p className="text-[10px] text-center text-slate-400 uppercase tracking-tight font-medium italic">
+
+              <p className="text-[9px] sm:text-[10px] text-center text-slate-400 uppercase tracking-tight font-medium italic">
                 * Chúng tôi cam kết bảo mật thông tin khách hàng tuyệt đối
               </p>
             </form>
           ) : (
-            <div className="flex flex-col items-center justify-center space-y-6 bg-white p-12 rounded-[2rem] text-center">
-                <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-2">
-                    <CheckCircle size={48} />
-                </div>
-                <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-slate-900 italic uppercase">Yêu cầu đã được ghi nhận</h3>
-                    <p className="text-slate-500 font-medium">Cảm ơn Quý đối tác. Đội ngũ tư vấn sẽ liên hệ lại trong vòng 24 giờ làm việc.</p>
-                </div>
-                <button 
-                    onClick={() => setSuccess(false)} 
-                    className="text-blue-600 font-bold border-b border-blue-600 pb-1 hover:text-slate-900 hover:border-slate-900 transition-all uppercase text-xs tracking-widest"
-                >
-                    Gửi yêu cầu mới
-                </button>
+            <div className="flex flex-col items-center justify-center space-y-5 bg-white p-8 sm:p-12 rounded-2xl text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center">
+                <CheckCircle size={40} />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg sm:text-2xl font-bold text-slate-900 uppercase">
+                  Yêu cầu đã được ghi nhận
+                </h3>
+                <p className="text-sm sm:text-base text-slate-500">
+                  Cảm ơn Quý đối tác. Chúng tôi sẽ liên hệ trong vòng 24h.
+                </p>
+              </div>
+              <button 
+                onClick={() => setSuccess(false)} 
+                className="text-blue-600 font-bold border-b border-blue-600 pb-1 hover:text-slate-900 hover:border-slate-900 transition-all uppercase text-xs tracking-widest"
+              >
+                Gửi lại
+              </button>
             </div>
           )}
+
         </div>
       </div>
     </section>

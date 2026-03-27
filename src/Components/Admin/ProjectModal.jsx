@@ -111,7 +111,7 @@ const ProjectModal = ({ isOpen, onClose, project, onRefresh }) => {
         imageUrl: finalImageUrl,
         externalLink: formData.externalLink
       };
-      if (project) await ProjectService.update(project.id, payload);
+      if (project) await ProjectService.update(project._id, payload);
       else await ProjectService.create(payload);
       
       onRefresh();
